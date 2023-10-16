@@ -12,9 +12,12 @@
 */
 
 // TODO: this should be { [superblock: string]: Superblock }
-export interface Curriculum {
-  rwdBlocks: SuperBlock;
-  jsBlocks: SuperBlock;
+
+export interface PathSegments {
+  superblock: string;
+  block?: string;
+  dashedName?: string;
+  id: string;
 }
 
 export interface SuperBlock {
@@ -43,15 +46,13 @@ export interface Challenge {
   challengeFiles: { contents: string; ext: string }[];
 }
 
-export interface PathSegments {
-  superblock: string;
-  block?: string;
-  dashedName?: string;
-  id: string;
-}
-
 export interface IdToDashedNameMap {
   [id: string]: string;
+}
+
+export interface Curriculum {
+  rwdBlocks: SuperBlock;
+  jsBlocks: SuperBlock;
 }
 
 interface SuperBlockToChallengeMap {
